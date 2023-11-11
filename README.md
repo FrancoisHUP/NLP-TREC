@@ -1,0 +1,5 @@
+## Commands
+
+```
+$ python main.py 
+```

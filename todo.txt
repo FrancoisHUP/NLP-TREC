@@ -1,0 +1,26 @@
+- lire et traiter les fichiers TREC (documents, jugements)
+- indexer les documents 
+- Faire les 3 evaluations
+
+Le project va s'executer avec un command "python main.py"
+Le programme va lire les fichiers d'entre (jugements et les documents)
+Le programme va produire des resultats (sauvegrader dans un fichier de reulstats "result(1).txt")
+Ce fichier va contenir les resultats de chaque test : 
+
+results {
+    pretreatment_type : "none" | "lemmatization" | "steaming",
+    request_lenght : "short" | "long",
+    weight_schemat : "normalized_frequency" | "Tf_idf_normalize" |  "Okapi_BM25"
+    result: number
+}
+
+Le programme peut etre lancer en mentionnant les arguments du resultat (pretreatment_type,request_lenght,weight_schemat,result)
+Ceci va permettre de faire des test precis. Si aucun arguments n'est donnee alors on lance tous les test.   
+
+Il faut faire un rapport. Tableau avec "pretreatment_type" none et 1 des deux. 
+Dans ces resultats il faut avoir au moins 30 requests et calculer le resultat avec trec_eval
+
+
+OPTIONNALS
+-> add database for inverted_token
+-> (PLUS)tourner le systeme de recherche en api/interface ? 

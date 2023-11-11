@@ -1,0 +1,5 @@
+.venv/
+TREC AP 88-90
+trec_eval_latest
+download
+*__pycache__*
