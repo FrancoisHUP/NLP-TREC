@@ -23,6 +23,11 @@ def check_args(args) :
 
   if(not args.no_download) : 
     downloads()
+    
+  if(args.test) :
+    print("run ",  args.test)
+  else: 
+    print("run : all test")
 
 def downloads() : 
   # Download required NLTK data
