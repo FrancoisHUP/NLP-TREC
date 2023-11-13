@@ -18,12 +18,12 @@ def get_documents() :
     # file_list = glob.glob('../TREC AP 88-90/TREC AP 88-90/collection de documents/AP/*.gz') # start from src 
     file_list = glob.glob('TREC AP 88-90/TREC AP 88-90/collection de documents/AP/*.gz') # start from 
 
-    count = 0 # TODO rmv, for testing
+    # count = 0 # TODO rmv, for testing
     # Loop over the list of files
     for filename in file_list:
-        count += 1 # TODO rmv, for testing
-        if(count>cap_number_of_read): # TODO rmv at some point
-            break # TODO rmv at some point
+        # count += 1 # TODO rmv, for testing
+        # if(count>cap_number_of_read): # TODO rmv at some point
+            # break # TODO rmv at some point
 
         # Open the .gz file
         with gzip.open(filename, 'rt') as file:  # 'rt' mode for text reading
@@ -92,29 +92,13 @@ def get_requests() :
                 }
     return requests_metadata 
 
-
-# def get_judgement(file_path):
-#     judgements = {}
-#     with open(file_path, 'r') as file:
-#         for line in file:
-#             split_line = line.strip().split()
-#             topic_id = split_line[0]
-#             doc_id = split_line[2]
-#             relevance = split_line[3]
-#             judgements.setdefault(topic_id, {}).update({doc_id: int(relevance)})
-#     return judgements
-
 def get_judgement() :    
     # Get a list of all topics files in the "Topics-requetes" directory
     file_list = glob.glob('TREC AP 88-90/TREC AP 88-90/jugements de pertinence/*') 
     judgements_metadata = {}
 
     # Loop over the list of files
-    # count = 0 # TODO rmv at some point
     for filename in file_list:
-        # count+=1 # TODO rmv at some point
-        # if(count>cap_number_of_read): # TODO rmv at some point
-            # break # TODO rmv at some point
 
         # Open the .gz file
         with open(filename, 'r') as file:

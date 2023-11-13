@@ -24,15 +24,15 @@ def calculate_precision_recall(results, judgements):
       metrics[index] = {"precision": precision, "recall": recall}
   return metrics
 
-def calculate_map(results, judgements):
+def calculate_map(results, judgements): 
     average_precisions = []
     for request_id, retrieved_docs in judgements.items():
-        relevant_docs = results.get(int(request_id))
+        relevant_docs = results.get(int(request_id)) # result_of_request_x
         cum_relevant = 0
         precision_sum = 0
         for i, doc_id in enumerate(retrieved_docs, 1):
             if doc_id in relevant_docs:
-                cum_relevant += 1
+                cum_relevant += 1 # TODO Never enter here 
                 precision_sum += cum_relevant / i
         average_precision = precision_sum / len(relevant_docs) if relevant_docs else 0
         average_precisions.append(average_precision)

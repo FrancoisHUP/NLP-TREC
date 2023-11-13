@@ -20,6 +20,11 @@ Ceci va permettre de faire des test precis. Si aucun arguments n'est donnee alor
 Il faut faire un rapport. Tableau avec "pretreatment_type" none et 1 des deux. 
 Dans ces resultats il faut avoir au moins 30 requests et calculer le resultat avec trec_eval
 
+- check le calcule du MAP
+- ajouter une loader et temps pour chaque test
+- verifier pour des optimisation
+- mettre les vecteurs dans une bd. 
+- install sur desktop
 
 OPTIONNALS
 -> add database for inverted_token
