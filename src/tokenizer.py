@@ -21,7 +21,7 @@ def tokenize(documents_metadata, pretreatment_type):
         if pretreatment_type == "basic":
             if "basic_token" not in data:
                 data['basic_token'] = ' '.join(data["tokens"])
-            preprocess_documents.append(data['basic_token'])
+            preprocess_documents.append({"token":data['basic_token'],"doc_id":doc_id})
 
         elif pretreatment_type == "lemmatization":
             if "lemme_token" not in data:

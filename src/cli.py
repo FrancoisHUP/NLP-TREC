@@ -25,9 +25,9 @@ def check_args(args) :
     downloads()
     
   if(args.test) :
-    print("run ",  args.test)
+    print("[RUN ",  args.test, "]")
   else: 
-    print("run : all test")
+    print("[RUN : ALL TESTS]")
 
 def downloads() : 
   # Download required NLTK data

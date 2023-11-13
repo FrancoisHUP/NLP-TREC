@@ -53,9 +53,9 @@ def get_documents() :
 
 topic_pattern = re.compile(r'<top>(.*?)</top>', re.DOTALL)
 # Regular expressions for individual elements
-num_pattern = re.compile(r'<num> Number:\s*(\d+)')
-title_pattern = re.compile(r'<title> Topic:\s*(.*?)\s*\n')
-desc_pattern = re.compile(r'<desc> Description:\s*(.*?)\s*<narr>', re.DOTALL)
+num_pattern = re.compile(r'<num>\s*Number:\s*(\d+)')
+title_pattern = re.compile(r'<title>\s*Topic:\s*(.*?)\s*\n')
+desc_pattern = re.compile(r'<desc>\s*Description:\s*(.*?)\s*<narr>', re.DOTALL)
 
 def get_requests() :
     topic_requests=[]
@@ -63,11 +63,7 @@ def get_requests() :
     # Get a list of all topics files in the "Topics-requetes" directory
     file_list = glob.glob('TREC AP 88-90/TREC AP 88-90/Topics-requetes/*') 
     # Loop over the list of files
-    count = 0 # TODO rmv at some point
     for filename in file_list:
-        count+=1 # TODO rmv at some point
-        if(count>cap_number_of_read): # TODO rmv at some point
-            break # TODO rmv at some point
 
         # Open the .gz file
         with open(filename, 'r') as file:
@@ -86,7 +82,8 @@ def get_requests() :
             num = num_pattern.search(topic_content)
             title = title_pattern.search(topic_content)
             desc = desc_pattern.search(topic_content)
-
+            
+          
             # Populating the dictionary
             if(num) :
                 requests_metadata[num.group(1)] = {
@@ -96,9 +93,18 @@ def get_requests() :
     return requests_metadata 
 
 
-def get_judgement() :
-    judgements=[]
-    
+# def get_judgement(file_path):
+#     judgements = {}
+#     with open(file_path, 'r') as file:
+#         for line in file:
+#             split_line = line.strip().split()
+#             topic_id = split_line[0]
+#             doc_id = split_line[2]
+#             relevance = split_line[3]
+#             judgements.setdefault(topic_id, {}).update({doc_id: int(relevance)})
+#     return judgements
+
+def get_judgement() :    
     # Get a list of all topics files in the "Topics-requetes" directory
     file_list = glob.glob('TREC AP 88-90/TREC AP 88-90/jugements de pertinence/*') 
     judgements_metadata = {}
@@ -121,7 +127,7 @@ def get_judgement() :
                 document_id = components[2]
                 is_related = components[3] == '1'
                 
-                 # Initialize a list for the topic_id if it does not exist
+                # Initialize a list for the topic_id if it does not exist
                 if topic_id not in judgements_metadata:
                     judgements_metadata[topic_id] = []
 
