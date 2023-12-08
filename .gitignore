@@ -1,5 +1,11 @@
 .venv/
+.venv*/
 TREC AP 88-90
 trec_eval_latest
 download
 *__pycache__*
+trec_eval-9.0.7
+pylucene
+.vscode
+index
+*/autreCode*
