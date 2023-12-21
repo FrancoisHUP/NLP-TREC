@@ -1,3 +1,18 @@
+# result=test(test.pretreatment_type,test.weight_schemat, test.request_lenght)
+# def test(pretreatment_type="none", weight_schemat="normalized_frequency", request_lenght="short") : 
+#   """
+#   Parameters
+#   ----------
+#     pretreatment_type : str 
+#       The type of pretreatment -> "none" or "lemmatization" or "steaming"
+#     weight_schemat : string
+#       The weighting shema -> "normalized_frequency" or "Tf_idf_normalize" or  "Okapi_BM25"
+#     request_lenght : str
+#         The request lenght ->  "short" or "long",
+#   """
+  # runTests()
+  # outputFile() 
+
 # def vectorize_request(self, preprocess_request_string, weight_scheme, ):
 #   request = [preprocess_request_string] if isinstance(preprocess_request_string, str) else preprocess_request_string
 #   if weight_scheme == 'normalized_frequency':

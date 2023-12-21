@@ -1,0 +1,4 @@
+index file in seperate forlder. 
+Dont need to index again if folder exists
+
+create file for token (base, lemme, steme)

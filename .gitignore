@@ -9,3 +9,8 @@ pylucene
 .vscode
 index
 */autreCode*
+AP/
+objects/
+remise/index*
+index*
+*.zip

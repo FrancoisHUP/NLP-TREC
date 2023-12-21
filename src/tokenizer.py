@@ -2,7 +2,6 @@ from nltk.corpus import stopwords
 from nltk.tokenize import word_tokenize
 from nltk.stem import PorterStemmer
 from nltk.stem import WordNetLemmatizer
-import multiprocessing
 
 stop_words = set(stopwords.words('english'))
 stemmer = PorterStemmer()
@@ -48,7 +47,6 @@ def tokenize_no_mp(documents_metadata, pretreatment_type):
     return preprocess_documents
 
 def process_document(data, pretreatment_type, doc_id):
-
     try:
         preprocess_documents = None
         
